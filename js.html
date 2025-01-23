@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <button class="notificationBtn" type="submit">Submit</button>
+<script>
+document.querySelector('.notificationBtn').addEventListener('click', () => {
+      // Check if the browser supports Notifications
+      if ('Notification' in window) {
+        // Request permission
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            // Show notification if permission is granted
+            new Notification('Hello! This is a notification.');
+          } else {
+            alert('Notification permission denied.');
+          }
+        });
+      } else {
+        alert('Notifications are not supported by your browser.');
+      }
+    });
+  console.log('hello');
+  console.info('hello');
+  console.warn('hello');
+  console.error('hello');
+  const data = [{name: 'shivam', age: 17}, {name: 'sunny', age:18}];
+  console.table(data);
+  console.group('Start')
+  console.log('Data 1')
+  console.log('Data 2')
+  console.log('Data 3')
+  console.groupEnd()
+  //alert('hey!! how are you..')
+</script>
+</body>
+
+</html>
